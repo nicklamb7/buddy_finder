@@ -1,4 +1,21 @@
-<h1> This is the profiles index page </h1>
-<% @profiles.each do |profile| %>
-<%= profile.first_name profile.last_name %>
-<% end %>
+<div class="profiles-page">
+  <div class="profiles  col-12 col-lg-7">
+  <h1>Profiles in Hoxton</h1>
+    <ul>
+      <% @profiles.each do |profile| %>
+      <li>
+        <div class="image-wrapper">
+          <img src="" alt="">
+        </div>
+        <div class="profile-details">
+          <h2><%= link_to profile.first_name.capitalize, profile_path(profile) %></h2>
+          <p><%= profile.location.capitalize %></p>
+        </div>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="map d-none d-lg-block col-md-5">
+    Map
+  </div>
+</div>
