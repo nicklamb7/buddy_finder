@@ -11,6 +11,7 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    @profile = Profile.find(params[:profile_id])
   end
 
   def create
@@ -32,5 +33,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :event_location, :event_name)
   end
-
 end
