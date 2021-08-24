@@ -1,0 +1,23 @@
+
+<div class="container mx-auto mt-5">
+  <div class="row  justify-content-center">
+    <div class="col-6">
+    <h2>Add a profile</h2>
+    <%= simple_form_for(@profile) do |f| %>
+    <%= f.error_notification %>
+    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+    <div class="form-inputs" style="width: 400px;">
+      <%= f.input :bio %>
+      <%= f.input :interests %>
+      <%= f.input :picture %>
+      <%= f.input :location %>
+      <%= f.input :birth_date %>
+    </div>
+
+    <div class="form-actions">
+    <button class ="btn btn-secondary m-3"> <%= f.button :submit %> </button>
+    </div>
+  <% end %>
+  </div>
+</div>
