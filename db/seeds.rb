@@ -7,12 +7,12 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 if Rails.env.development?
-  puts "Destroying users..."
-  User.destroy_all
-  puts "Destroying profiles..."
-  Profile.destroy_all
   puts "Destroying bookings..."
   Booking.destroy_all
+  puts "Destroying profiles..."
+  Profile.destroy_all
+  puts "Destroying users..."
+  User.destroy_all
 end
 
 puts "create user"
@@ -20,8 +20,8 @@ user_a = User.create!(email: "nick@gmail.com", password: "hwhlaaqeor")
 user_b = User.create!(email: "me@rlessard.com", password: "hidceghgwj")
 
 puts "create profile"
-profile_a = Profile.create!(user: user_a, first_name: "alex", last_name: "natalia", bio: "Wonder Woman 1984", interests: "Wonder, Woman, Soviet Union, Cold War", picture: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", location: "hoxton")
-profile_b = Profile.create!(user: user_b, first_name: "john", last_name: "christina", bio: "The Shawshank Redemption", interests: "double murder, banker, new life, prison", picture: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", location: "london")
+profile_a = Profile.create!(user: user_a, first_name: "Alex", last_name: "Goring", bio: "Wonder Woman 1984", interests: "Wonder, Woman, Soviet Union, Cold War", picture: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", location: "hoxton", birth_date: Date.new(1994, 2, 5))
+profile_b = Profile.create!(user: user_b, first_name: "Natalia", last_name: "Jenner", bio: "The Shawshank Redemption", interests: "double murder, banker, new life, prison", picture: "https://image.tmdb.org/t/p/original/q6y0Go1tsGEsmtFryDOJo3dEmqu.jpg", location: "london", birth_date: Date.new(1600, 2, 5))
 
 puts "create booking"
 start_date = Date.new(2021, 2, 5)
