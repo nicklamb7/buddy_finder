@@ -6,6 +6,8 @@ class ProfilesController < ApplicationController
 
   def show
     @profile = Profile.find(params[:id])
+    @full_name = full_name(@profile.first_name, @profile.last_name)
+    @age = age(@profile.birth_date)
   end
 
   def new
@@ -33,6 +35,22 @@ class ProfilesController < ApplicationController
     @profile.destroy
     redirect_to profiles_path
   end
+
+  def full_name(first_name, last_name)
+    "#{first_name} #{last_name}"
+  end
+
+  # def age(birth_date)
+  # birthdate = Time.new(year, month, day)
+  # avg_seconds_in_year = 31557600
+  # seconds = (Time.now- birthdate).to_i
+  # years = seconds/avg_seconds_in_year
+  # years
+  # end
+  # def age(birth_date)
+  #   age = Date.today - "#{birth_date}"
+  #   age -= 1 if Date.today < birthday + age.years #for days before birthday
+  # end
 
   private
 
