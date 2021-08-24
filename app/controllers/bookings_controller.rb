@@ -4,13 +4,14 @@ class BookingsController < ApplicationController
     @bookings = @profile.bookings
   end
 
-  # def show
-  #   @profile = Profile.find(params[:profile_id])
-  #   @booking = @profile.bookings(params[:id])
-  # end
+  def show
+    @profile = Profile.find(params[:profile_id])
+    @booking = Booking.find(params[:id])
+  end
 
   def new
     @booking = Booking.new
+    @profile = Profile.find(params[:profile_id])
   end
 
   def create
@@ -32,5 +33,4 @@ class BookingsController < ApplicationController
   def booking_params
     params.require(:booking).permit(:start_date, :end_date, :event_location, :event_name)
   end
-
 end
