@@ -4,10 +4,10 @@ class BookingsController < ApplicationController
     @bookings = @profile.bookings
   end
 
-  # def show
-  #   @profile = Profile.find(params[:profile_id])
-  #   @booking = @profile.bookings(params[:id])
-  # end
+  def show
+    @profile = Profile.find(params[:profile_id])
+    @booking = Booking.find(params[:id])
+  end
 
   def new
     @booking = Booking.new
