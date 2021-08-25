@@ -19,6 +19,7 @@ body {
         border-top: 1px solid #e1e1e1;
         padding: 16px;
         display: flex;
+        justify-content: space-between;
         font-family: Inter, sans-serif;
         .image-wrapper {
           height: 300px;
@@ -63,9 +64,13 @@ body {
 .profile-details {
   font-weight: 300;
   font-size: 14.4px;
+  width: 600px;
   h2 {
     font-size: 18px;
     font-weight: 300;
     font-family: Inter, sans-serif;
+  }
+  svg {
+    margin: 0px 8px;
   }
 }
