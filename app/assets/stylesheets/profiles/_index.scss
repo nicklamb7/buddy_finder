@@ -40,8 +40,12 @@ body {
     .map {
       background-color: #f7f7f8;
       position: sticky;
-      height: 100vh;
+      height: 92.5vh;
       top: 80px;
+      img {
+        height: 100%;
+        width: auto;
+      }
     }
   }
 }
