@@ -40,17 +40,15 @@ class ProfilesController < ApplicationController
     "#{first_name} #{last_name}"
   end
 
-  # def age(birth_date)
-  # birthdate = Time.new(year, month, day)
-  # avg_seconds_in_year = 31557600
-  # seconds = (Time.now- birthdate).to_i
-  # years = seconds/avg_seconds_in_year
-  # years
-  # end
-  # def age(birth_date)
-  #   age = Date.today - "#{birth_date}"
-  #   age -= 1 if Date.today < birthday + age.years #for days before birthday
-  # end
+  def age(birth_date)
+    if birth_date != nil
+    # 26 = 2021 - 1995
+    age = Date.today.year - birth_date.year
+    # birth_date : date object // age.year to get the year only
+    age -= 1 if Date.today < birth_date + age.years #for days before birthday
+    age
+    end
+  end
 
   private
 
