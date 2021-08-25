@@ -1,5 +1,4 @@
 class ProfilesController < ApplicationController
-
   def index
     @profiles = Profile.all
   end
@@ -15,9 +14,14 @@ class ProfilesController < ApplicationController
   end
 
   def create
-    @profile = Profile.new(profile_params)
-    @profile.save
-    redirect_to profile_path(@profile)
+    if current_user
+      @profile = Profile.new(profile_params)
+      @profile.user_id = current_user.id
+      @profile.save
+      redirect_to profile_path(@profile)
+    else
+      redirect_to new_user_session_path
+    end
   end
 
   def update
@@ -51,10 +55,9 @@ class ProfilesController < ApplicationController
   #   age = Date.today - "#{birth_date}"
   #   age -= 1 if Date.today < birthday + age.years #for days before birthday
   # end
-
   private
 
   def profile_params
-    params.require(:profile).permit(:bio, :interests, :picture, :location, :birth_date)
+    params.require(:profile).permit(:bio, :interests, :picture, :location, :birth_date, :last_name, :first_name)
   end
 end
