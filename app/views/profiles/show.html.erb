@@ -71,11 +71,19 @@
               <%= f.input :event_location %>
             </div>
 
-            <div class="form-actions">
+            <div class="form-actions text-center">
             <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
             </div>
           <% end %>
-          <%= link_to 'Stalk all current bookings', profile_bookings_path(@profile), class: "btn btn-primary" %>
+          <div class="d-flex justify-content-center">
+          <div class="m-1">
+          <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary" %>
+          </div>
+          <br>
+          <div class="m-1">
+          <%= link_to 'Edit profile', edit_profile_path(@profile), class: "btn btn-primary" %>
+          </div>
+          </div>
         </div>
 
       </div>
