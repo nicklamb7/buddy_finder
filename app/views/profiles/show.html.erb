@@ -58,9 +58,7 @@
           <br>
           <br>
 
-        <div class="container mx-auto mt-5">
-          <div class="row  justify-content-center">
-            <div class="col-6">
+          <div class="row  justify-content-center p-2">
             <h2>Send a booking request to this buddy</h2>
             <%= simple_form_for([@profile, @booking]) do |f| %>
             <%= f.error_notification %>
@@ -69,54 +67,14 @@
             <div class="form-inputs">
               <%= f.input :start_date %>
               <%= f.input :end_date %>
-              <%= f.input :event_location %>
               <%= f.input :event_name %>
-
+              <%= f.input :event_location %>
             </div>
 
             <div class="form-actions">
-            <button class ="btn btn-secondary m-3"> <%= f.button :submit %> </button>
+            <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
             </div>
           <% end %>
-          </div>
-        </div>
-
-          <%# <form action="3/bookings" method="post" class="border p-5">
-            <h1>Send a booking request to this buddy</h1>
-            <br>
-
-            <div class="form-group">
-              <label for="booking_name">Event name</label>
-              <input id="booking_name" name="booking[event_name]" type="text" class="form-control" placeholder="type event name here...">
-            </div>
-            <br>
-
-            <div class="form-group">
-              <label for="booking_start_date">Start date</label>
-              <input id="booking_start_date" name="booking[start_date]" type="date" class="form-control" placeholder="choose date...">
-            </div>
-            <br>
-
-            <div class="form-group">
-              <label for="booking_end_date">End date</label>
-              <input id="booking_end_date" name="booking[end_date]" type="date" class="form-control" placeholder="choose date...">
-            </div>
-            <br>
-
-            <div class="form-group">
-              <label for="booking_event_location">Event location</label>
-              <input id="booking_event_location" name="booking[event_location]" type="text" class="form-control" placeholder="type event location here...">
-            </div>
-            <br>
-
-            <div class="form-group">
-              <label for="booking_message">Message</label>
-              <input id="booking_message" name="booking[message]" type="text" class="form-control" placeholder="type message here...">
-            </div>
-            <br>
-
-            <input type="submit" name="commit" value="Send" class="btn btn-success w-100 mt-3">
-          </form> %>
 
         </div>
 
@@ -125,7 +83,6 @@
 
 
     </div>
-
 
 
 
