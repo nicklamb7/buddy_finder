@@ -19,6 +19,7 @@ body {
         border-top: 1px solid #e1e1e1;
         padding: 16px;
         display: flex;
+        justify-content: space-between;
         font-family: Inter, sans-serif;
         .image-wrapper {
           height: 300px;
@@ -34,6 +35,10 @@ body {
         }
         p {
           color: #000;
+        }
+        h2 {
+          font-size: 24px;
+          margin: 24px 0px 16px 0px;
         }
       }
     }
@@ -63,9 +68,26 @@ body {
 .profile-details {
   font-weight: 300;
   font-size: 14.4px;
+  width: 600px;
   h2 {
     font-size: 18px;
     font-weight: 300;
     font-family: Inter, sans-serif;
+  }
+  svg {
+    margin: 0px 8px;
+    color: #ff385c;
+  }
+  button {
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid #ff385c;
+    color:  #ff385c;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 24px 0px;
+  }
+  button a {
+    color:  #ff385c !important;
   }
 }
