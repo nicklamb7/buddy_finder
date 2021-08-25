@@ -32,7 +32,13 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    @profile = Profile.find(params[:id])
+    # Edit method is shit tbh... can't retake this... only for demo purpose
+    # load db profile
+      @profile = Profile.find(params[:id])
+    # if current user id is NOT equal to the profile user_id, raise error
+    if @profile.user_id != current_user.id
+      @error = 'no-access'
+    end
   end
 
   def destroy

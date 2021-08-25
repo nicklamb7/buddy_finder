@@ -1,3 +1,4 @@
+<% if @error == nil %>
 <h1> <%= @profile.first_name %>'s edit profile page</h1>
 <%= link_to 'Go back to all profiles', profiles_path, class: "btn btn-primary" %>
 <div class="container py-5">
@@ -20,3 +21,6 @@
     </div>
   </div>
 </div>
+<% else %>
+<h2>Error : Unauthorize access</h2>
+<% end %>
