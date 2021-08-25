@@ -6,7 +6,8 @@ class BookingsController < ApplicationController
 
   def show
     @profile = Profile.find(params[:profile_id])
-    @booking = Booking.find(params[:id])
+    # @booking = Booking.find(params[:id])
+    @booking = Booking.new
   end
 
   def new
@@ -18,8 +19,9 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @profile = Profile.find(params[:profile_id])
     @booking.profile = @profile
-    @booking.save
-    redirect_to profile_path(@profile)
+    @booking.user_id = current_user.id
+    @booking.save!
+    redirect_to profile_booking_path(@profile)
   end
 
   def destroy

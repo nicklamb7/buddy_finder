@@ -7,6 +7,7 @@ class ProfilesController < ApplicationController
     @profile = Profile.find(params[:id])
     @full_name = full_name(@profile.first_name, @profile.last_name)
     @age = age(@profile.birth_date)
+    @booking = Booking.new
   end
 
   def new
