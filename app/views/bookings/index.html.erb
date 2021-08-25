@@ -1,1 +1,17 @@
-<h1> This is the bookings index page </h1>
+<div class="container text-center p-3">
+  <h1>My bookings</h1>
+  <div class ="container d-flex justify-content-center m-3">
+    <% @bookings.each do |booking| %>
+    <div class="card m-3" style="width: 18rem;">
+      <img src="https://source.unsplash.com/random" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title"><%= booking.event_name %></h5>
+        <p class="card-text"><%= booking.event_location %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+  <div class="text-center">
+    <%= link_to "Go back to my profile", profile_path(@profile), class: "btn btn-primary"%>
+    </div>
+  </div>
