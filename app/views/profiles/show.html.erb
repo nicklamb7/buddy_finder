@@ -36,7 +36,11 @@
           <br>
 
           <h2> Age </h2>
-          <p> <%= @profile.age %> </p>
+          <% if @age == nil %>
+          <p> N/A </p>
+          <% else %>
+          <p> <%= @age %> </p>
+          <% end %>
           <br>
 
           <h2> Interests </h2>
