@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&display=swap");
 .banner {
   width: 100vw;
   height: 95vh;
@@ -7,13 +7,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('banner.jpg');
+  background-image: url("banner.jpg");
   background-repeat: no-repeat, repeat;
   background-position: 50% 50%;
   background-size: cover;
   h1 {
     font-size: 7.43rem;
-    font-family: 'Open Sans', sans-serif;
+    font-family: "Open Sans", sans-serif;
     text-align: center;
     color: #ffffff;
   }
@@ -29,5 +29,9 @@
     width: 200px;
     color: #ffffff;
     font-size: 20px;
+  }
+  a {
+    color: #ffffff;
+    text-decoration: none;
   }
 }
