@@ -36,6 +36,10 @@ body {
         p {
           color: #000;
         }
+        h2 {
+          font-size: 24px;
+          margin: 24px 0px 16px 0px;
+        }
       }
     }
     .map {
@@ -72,5 +76,18 @@ body {
   }
   svg {
     margin: 0px 8px;
+    color: #ff385c;
+  }
+  button {
+    background-color: transparent;
+    border-radius: 50px;
+    border: 1px solid #ff385c;
+    color:  #ff385c;
+    font-size: 16px;
+    padding: 8px 16px;
+    margin: 24px 0px;
+  }
+  button a {
+    color:  #ff385c !important;
   }
 }
