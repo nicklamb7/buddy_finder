@@ -2,6 +2,7 @@ class BookingsController < ApplicationController
   def index
     @profile = Profile.find(params[:profile_id])
     @bookings = @profile.bookings
+    @getRandomNumber = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10].sample
   end
 
   def show
