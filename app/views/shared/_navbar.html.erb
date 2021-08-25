@@ -3,7 +3,16 @@
     <span id="logo">Buddy Finder</span>
   </div>
   <div class="right-section">
-    <div class="sign-up-btn d-none d-sm-block">Sign up</div>
-    <div class="login-btn">Log in</div>
+    <div class="nav-btns"><%= link_to "Home", root_path %></div>
+    <div class="nav-btns d-none d-sm-block"><%= link_to "Explore", profiles_path %></div>
+    <% if !user_signed_in? %>
+    <div class="nav-btns d-none d-sm-block"><%= link_to "Sign up", new_user_registration_path %></div>
+    <% end %>
+    <% if !user_signed_in? %>
+      <div class="nav-btns"><%= link_to "Log in", new_user_session_path %></div>
+    <% end %>
+    <% if user_signed_in? %>
+      <img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/dxhrxhiwb/image/upload/v1629889921/dwayne_pcvf1e.jpg" />
+    <% end %>
   </div>
 </nav>
