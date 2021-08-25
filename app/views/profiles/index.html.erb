@@ -5,7 +5,7 @@
       <% @profiles.each do |profile| %>
       <li>
         <div class="image-wrapper">
-          <img src="" alt="">
+          <img src="<%= profile.picture %>" alt="">
         </div>
         <div class="profile-details">
           <h2><%= link_to profile.first_name.capitalize, profile_path(profile) %></h2>
@@ -16,6 +16,6 @@
     </ul>
   </div>
   <div class="map d-none d-lg-block col-md-5">
-    Map
+    <%= image_tag("map.png") %>
   </div>
 </div>
