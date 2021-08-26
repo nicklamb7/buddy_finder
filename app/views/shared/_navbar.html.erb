@@ -2,10 +2,18 @@
   <div class="left-section">
     <span id="logo">Buddy Finder</span>
   </div>
-  <div class="middle-section">
-    <form>
-      <input type="text" placeholder="Search all buddies...">
-    </form>
+  <div class="middle-section d-flex">
+    <div class="m-2">
+    <%= form_tag profiles_path, method: :get do %>
+      <%= text_field_tag :query, '',
+      class: "form-control",
+      placeholder: "Find a buddy"
+      %>
+      </div>
+      <div class="m-2">
+      <%= submit_tag "Search", class: "btn btn-primary search" %>
+      </div>
+    <% end %>
   </div>
   <div class="right-section">
     <div class="nav-btns"><%= link_to "Home", root_path %></div>

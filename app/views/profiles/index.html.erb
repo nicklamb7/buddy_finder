@@ -1,5 +1,8 @@
 <div class="profiles-page">
   <div class="profiles  col-12 col-lg-7">
+  <% if @profiles.empty? %>
+  <h2>Sorry, no matches found...</h2>
+  <% else %>
   <h1>Profiles in Hoxton</h1>
     <ul>
       <% @profiles.each do |profile| %>
@@ -21,6 +24,7 @@
       </li>
       <% end %>
     </ul>
+    <% end %>
   </div>
   <div class="map d-none d-lg-block col-md-5">
     <%= image_tag("map.png") %>

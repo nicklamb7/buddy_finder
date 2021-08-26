@@ -1,6 +1,14 @@
 class ProfilesController < ApplicationController
   def index
-    @profiles = Profile.all
+    if params[:query].present?
+      sql_query = "first_name @@ :query OR last_name @@ :query OR concat(first_name, ' ', last_name) @@ :query"
+      @profiles = Profile.where(sql_query, query: "%#{params[:query]}%")
+      @found = true
+    else
+      @profiles = Profile.all
+      @found = false
+
+    end
   end
 
   def show
@@ -46,12 +54,20 @@ class ProfilesController < ApplicationController
   end
 
   def age(birth_date)
-    if birth_date != nil
-    # 26 = 2021 - 1995
-    age = Date.today.year - birth_date.year
-    # birth_date : date object // age.year to get the year only
-    age -= 1 if Date.today < birth_date + age.years #for days before birthday
-    age
+    unless birth_date.nil?
+      # 26 = 2021 - 1995
+      age = Date.today.year - birth_date.year
+      # birth_date : date object // age.year to get the year only
+      age -= 1 if Date.today < birth_date + age.years # for days before birthday
+      age
+    end
+  end
+
+  def search
+    if params[:query].present?
+      sql_query = "first_name ILIKE :query OR last_name ILIKE :query"
+      @profiles = Profile.where(sql_query, query: "%#{params[:query]}%")
+
     end
   end
 
