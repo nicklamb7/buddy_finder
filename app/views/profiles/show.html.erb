@@ -8,7 +8,7 @@
         <h1> <%= @full_name %> </h1>
 
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner">https://github.com/roxannelessard/buddy_finder/pull/40/conflict?name=app%252Fviews%252Fprofiles%252Fshow.html.erb&ancestor_oid=3969c33b0e7a848d2e521495661f8d196748d781&base_oid=4aa332774365bd63c81bfe3c369b487b9e78bc7c&head_oid=c86e2ae6ce53c648bde5ae1c7a08bf9c47ccb386
               <div class="carousel-item active">
                 <img src="<%= @profile.picture %>" class="d-block w-100" alt="...">
               </div>
@@ -64,12 +64,13 @@
             <%= f.error_notification %>
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-              <div class="form-inputs">
-                <%= f.input :start_date %>
-                <%= f.input :end_date %>
-                <%= f.input :event_name %>
-                <%= f.input :event_location %>
-              </div>
+            <div class="form-inputs">
+              <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+              <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
+              <%= f.input :event_name %>
+              <%= f.input :event_location %>
+            </div>
+
 
               <div class="form-actions text-center">
               <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
