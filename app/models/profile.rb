@@ -7,4 +7,11 @@ class Profile < ApplicationRecord
   validates :bio, presence: true, length: { maximum: 500, too_long: "500 characters is the maximum allowed" }
   validates :interests, presence: true, length: { maximum: 200, too_long: "200 characters is the maximum allowed" }
   validates :picture, presence: true
+
+  include PgSearch::Model
+  pg_search_scope :search_by_first_name_and_last_name,
+                  against: %i[first_name last_name],
+                  using: {
+                    tsearch: { prefix: true }
+                  }
 end
