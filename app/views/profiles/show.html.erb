@@ -1,7 +1,5 @@
-<h1> <%= @profile.first_name %>'s profile page</h1>
-<%= link_to 'Go back to all profiles', profiles_path, class: "btn btn-primary" %>
 
-    <div class="container my-3">
+    <div class="container show-page">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-8">
 
@@ -73,23 +71,17 @@
 
 
               <div class="form-actions text-center">
-              <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
+              <button class ="btn btn-success m-3 pink-button"> <%= f.button :submit %> </button>
               </div>
             <% end %>
             <div class="d-flex justify-content-center">
               <div class="m-1">
-              <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary" %>
+              <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary white-button" %>
               </div>
               <br>
             </div>
         </div>
-
       </div>
-
-
-
     </div>
-
-
   </body>
 </html>
