@@ -32,12 +32,9 @@ class ProfilesController < ApplicationController
   end
 
   def edit
-    # Edit method is shit tbh... can't retake this... only for demo purpose
-    # load db profile
-      @profile = Profile.find(params[:id])
-    # if current user id is NOT equal to the profile user_id, raise error
-    if @profile.user_id != current_user.id
-      @error = 'no-access'
+    @profile = Profile.find(params[:id])
+    unless current_user.profile == @profile
+      return redirect_to current_user.profile.present? ? edit_profile_path(current_user.profile) : new_profile_path, notice: "You are not authorized to edit someone else's profile"
     end
   end
 

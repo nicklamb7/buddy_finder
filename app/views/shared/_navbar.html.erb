@@ -15,9 +15,11 @@
         <img class="avatar-large avatar-clickable" alt="avatar-large" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dxhrxhiwb/image/upload/v1629889921/dwayne_pcvf1e.jpg"/>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="#">View bookings</a>
-          <%# Make sure to have a user profile ABSOLUTELY! otherwise this will break %>
-          <%# SHOULD BE: edit_profile_path(profile.id) %>
-          <%= link_to 'Edit profile', edit_profile_path(current_user.id), class: "dropdown-item" %>
+          <% if current_user.profile.present? %>
+            <%= link_to 'Edit profile', edit_profile_path(current_user.profile), class: "dropdown-item" %>
+          <% else %>
+            <%= link_to 'Create profile', new_profile_path, class: 'dropdown-item' %>
+          <% end %>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="#">Log out</a>
         </div>
