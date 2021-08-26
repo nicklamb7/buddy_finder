@@ -8,7 +8,7 @@
         <h1> <%= @full_name %> </h1>
 
           <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
+            <div class="carousel-inner">https://github.com/roxannelessard/buddy_finder/pull/40/conflict?name=app%252Fviews%252Fprofiles%252Fshow.html.erb&ancestor_oid=3969c33b0e7a848d2e521495661f8d196748d781&base_oid=4aa332774365bd63c81bfe3c369b487b9e78bc7c&head_oid=c86e2ae6ce53c648bde5ae1c7a08bf9c47ccb386
               <div class="carousel-item active">
                 <img src="<%= @profile.picture %>" class="d-block w-100" alt="...">
               </div>
@@ -71,19 +71,17 @@
               <%= f.input :event_location %>
             </div>
 
-            <div class="form-actions text-center">
-            <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
+
+              <div class="form-actions text-center">
+              <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
+              </div>
+            <% end %>
+            <div class="d-flex justify-content-center">
+              <div class="m-1">
+              <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary" %>
+              </div>
+              <br>
             </div>
-          <% end %>
-          <div class="d-flex justify-content-center">
-          <div class="m-1">
-          <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary" %>
-          </div>
-          <br>
-          <div class="m-1">
-          <%= link_to 'Edit profile', edit_profile_path(@profile), class: "btn btn-primary" %>
-          </div>
-          </div>
         </div>
 
       </div>
@@ -92,9 +90,6 @@
 
     </div>
 
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 
   </body>
 </html>
