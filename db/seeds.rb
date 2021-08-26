@@ -25,7 +25,7 @@ user_f = User.create!(email: "emily@gmail.com", password: "hwhlaaweeor")
 user_g = User.create!(email: "emma@gmail.com", password: "hidcwegghgwj")
 user_h = User.create!(email: "oprah@gmail.com", password: "hrjnceghgwj")
 user_i = User.create!(email: "miley@gmail.com", password: "hidceghwj")
-nat = User.create!(email: "nat@gmail.com", password: "hidcewfwj")
+user_nat = User.create!(email: "nat@gmail.com", password: "hidcewfwj")
 
 puts "create profile"
 profile_a = Profile.create!(user: user_a, first_name: "Walter", last_name: "White", bio: "Hi my name is Walter, used to be a chemistry teacher but now I’m just into meth. I like meth a lot and basically am up for anything so long as meth is involved. I am the one who knocks!", interests: "Meth, My brother in law(I miss him), my best friend, Jessie (miss him too). Cooking meth, taking meth, selling meth.", picture: "https://res.cloudinary.com/dr5brdsjq/image/upload/v1629898943/walter_iukrdb.jpg", location: "45 Appleby St, London, E2 8EP", birth_date: Date.new(1968, 3, 8))
@@ -37,7 +37,7 @@ profile_f = Profile.create!(user: user_f, first_name: "Emily", last_name: "Blunt
 profile_g = Profile.create!(user: user_g, first_name: "Emma", last_name: "Watson", bio: "I'm one of the best actress because I am nice to everyone", interests: "Just Harry Potter really, yeah Harry baby.", picture: "https://res.cloudinary.com/dr5brdsjq/image/upload/v1629899073/emma_b9cmor.jpg", location: "890 Bombshell St, London T1 5JN", birth_date: Date.new(1990, 4, 15))
 profile_h = Profile.create!(user: user_h, first_name: "Oprah", last_name: "Winfrey", bio: "Oprah Gail Winfrey is an American talk show host, television producer, actress, author, and philanthropist.", interests: "Love drama AF! And speaking to the third person", picture: "https://res.cloudinary.com/dr5brdsjq/image/upload/v1629896926/oprah_v7gvbr.jpg", location: "79 Amazing St, London E2 0GD", birth_date: Date.new(1954, 1, 29))
 profile_i = Profile.create!(user: user_i, first_name: "Miley", last_name: "Cyrus", bio: "Do I really need to say something?", interests: "Party & drugs.. my father tried to stop me but hey.. here I am.", picture: "https://res.cloudinary.com/dr5brdsjq/image/upload/v1629896923/miley_cyrus_j5rlbh.jpg", location: "1 You Wont find me St, London E2 7JH", birth_date: Date.new(1992, 11, 23))
-profile_nat = Profile.create!(user: nat, first_name: "Natasha", last_name: "Goring", bio: "Wonder Woman 1984", interests: "Wonder Woman, Soviet Union, Cold War", picture: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", location: "Directly from a movie")
+profile_nat = Profile.create!(user: user_nat, first_name: "Natasha", last_name: "Goring", bio: "Wonder Woman 1984", interests: "Wonder Woman, Soviet Union, Cold War", picture: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", location: "Directly from a movie")
 
 
 puts "create booking 1"
