@@ -1,25 +1,26 @@
 
-<div class="container mx-auto mt-5">
-  <div class="row  justify-content-center">
-    <div class="col-6">
-    <h2>Add a profile</h2>
-    <%= simple_form_for(@profile) do |f| %>
-    <%= f.error_notification %>
-    <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12 col-md-6 offset-lg-3">
+      <div class="bg-white rounded p-3 shadow">
+    <h2>Create your profile</h2>
 
-    <div class="form-inputs" style="width: 400px;">
-      <%= f.input :first_name %>
-      <%= f.input :last_name %>
-      <%= f.input :bio %>
-      <%= f.input :interests %>
-      <%= f.input :picture %>
-      <%= f.input :location %>
-      <%= f.input :birth_date %>
-    </div>
+      <%= simple_form_for [@profile] do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-actions">
-    <button class ="btn btn-secondary m-3"> <%= f.button :submit %> </button>
+        <%= f.input :first_name %>
+        <%= f.input :last_name %>
+        <%= f.input :bio %>
+        <%= f.input :interests %>
+        <%= f.input :picture, label: 'Picture url'%>
+        <%= f.input :location, label: 'Location (city)' %>
+        <%= f.input :birth_date %>
+
+          <br>
+          <%= f.submit class: 'btn btn-success' %>
+      <% end %>
+      </div>
     </div>
-  <% end %>
   </div>
 </div>
