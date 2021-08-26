@@ -1,6 +1,8 @@
-<div class="container">
-  <div class="row justify-content-center">
-    <div class="col-6">
+<div class="login-page">
+<div class="container" id="login">
+  <div class="row justify-content-center login-form">
+    <div class="col-10">
+    <h1>Buddy Finder</h1>
     <h2>Log in</h2>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -19,8 +21,11 @@
         <%= f.button :submit, "Log in" %>
       </div>
     <% end %>
-
-    <%= render "devise/shared/links" %>
+      <a href="/users/sign_up" class="login-btn">
+        Sign up
+      </a>
+      <a href="/users/password/new" class="forgot-password">Forgot your password?</a>
     </div>
   </div>
+</div>
 </div>
