@@ -21,13 +21,20 @@ require("channels");
 // ----------------------------------------------------
 
 // External imports
+
+import { initFlatpickr } from "../plugins/flatpickr";
+
 // import "bootstrap";
+
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
 const searchBar = document.querySelector("#search-bar");
 
-document.addEventListener("turbolinks:load", () => {
+
+document.addEventListener('turbolinks:load', () => {
+  initFlatpickr();
+
   // Call your functions here, e.g:
   // initSelect2();
 });
