@@ -7,4 +7,11 @@ class Profile < ApplicationRecord
   validates :bio, presence: true, length: { maximum: 500, too_long: "500 characters is the maximum allowed" }
   validates :interests, presence: true, length: { maximum: 200, too_long: "200 characters is the maximum allowed" }
   validates :picture, presence: true
+
+  def unavailable_dates
+    bookings.pluck(:start_date, :end_date).map do |range|
+      { from: range[0], to: range[1] }
+    end
+  end
+
 end
