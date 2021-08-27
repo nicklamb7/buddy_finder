@@ -20,7 +20,10 @@
 
   <body>
     <%= render "shared/navbar"%>
-    <%= render 'shared/flashes' %>
+    <div class="container">
+        <%= render 'shared/flashes' %>
+
+    </div>
     <%= yield %>
   </body>
 </html>

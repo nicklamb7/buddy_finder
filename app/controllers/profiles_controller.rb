@@ -49,7 +49,8 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find(params[:id])
     unless current_user.profile == @profile
-      return redirect_to current_user.profile.present? ? edit_profile_path(current_user.profile) : new_profile_path, notice: "You are not authorized to edit someone else's profile"
+      return redirect_to current_user.profile.present? ? edit_profile_path(current_user.profile) : new_profile_path,
+                         alert: "You are not authorized to edit someone else's profile"
     end
   end
 

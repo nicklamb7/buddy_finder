@@ -10,6 +10,11 @@
           <p class="card-title"><%= booking.event_name %></p>
           <p class="card-text"><%= booking.event_location %></p>
           <p class="card-text fw-bolder" style="color: #ff385c;"><%= booking.start_date%> - <%= booking.end_date %></p>
+          <%= link_to "Cancel booking",
+                booking_path(booking.id),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn btn-primary white-button" %>
+
       </div>
     </div>
     <% end %>

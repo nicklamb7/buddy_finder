@@ -9,7 +9,11 @@ class BookingsController < ApplicationController
     # # @booking = Booking.find(params[:id])
     # @booking = Booking.new
     # THIS SHOWS ALL USER'S BOOKINGS"
-    @bookings = Booking.where(user_id: current_user.id)
+    if current_user
+      @bookings = Booking.where(user_id: current_user.id)
+    else
+      redirect_to new_user_session_path, alert: "Log in to view your bookings!"
+    end
   end
 
   def new
@@ -18,18 +22,23 @@ class BookingsController < ApplicationController
   end
 
   def create
-    @booking = Booking.new(booking_params)
-    @profile = Profile.find(params[:profile_id])
-    @booking.profile = @profile
-    @booking.user_id = current_user.id
-    @booking.save!
-    redirect_to profile_bookings_path(@profile)
+    if current_user
+      @booking = Booking.new(booking_params)
+      @profile = Profile.find(params[:profile_id])
+      @booking.profile = @profile
+      @booking.user_id = current_user.id
+      @booking.save!
+      redirect_to profile_bookings_path(@profile)
+    else
+      redirect_to new_user_session_path, alert: "Log in to make a booking!"
+    end
   end
 
   def destroy
     @booking = Booking.find(params[:id])
+
     @booking.destroy
-    redirect_to bookings_path
+    redirect_to mybookings_path
   end
 
   private
