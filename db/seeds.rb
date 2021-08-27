@@ -6,14 +6,14 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-if Rails.env.development?
-  puts "Destroying bookings..."
+# if Rails.env.development?
+#   puts "Destroying bookings..."
   Booking.destroy_all
-  puts "Destroying profiles..."
+  # puts "Destroying profiles..."
   Profile.destroy_all
-  puts "Destroying users..."
+  # puts "Destroying users..."
   User.destroy_all
-end
+# end
 
 puts "create user"
 user_a = User.create!(email: "walterwhite@gmail.com", password: "hwhlaaqeor")
