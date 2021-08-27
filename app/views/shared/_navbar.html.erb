@@ -20,7 +20,9 @@
     <div class="nav-btns d-none d-sm-block"><%= link_to "Explore", profiles_path %></div>
     <% if user_signed_in? %>
       <div class="dropdown">
-        <img class="avatar-large avatar-clickable" alt="avatar-large" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dxhrxhiwb/image/upload/v1629889921/dwayne_pcvf1e.jpg"/>
+        <div class="avatar-large avatar-clickable">
+          <img  alt="avatar-large" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dwfl1xhao/image/upload/v1630059458/buddyfinder/1229892934.0_dc3evb.webp"/>
+        </div>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
         <%= link_to "View bookings", mybookings_path, class: "dropdown-item" %>
           <% if current_user.profile.present? %>
