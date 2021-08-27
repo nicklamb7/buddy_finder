@@ -22,7 +22,7 @@
       <div class="dropdown">
         <img class="avatar-large avatar-clickable" alt="avatar-large" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dxhrxhiwb/image/upload/v1629889921/dwayne_pcvf1e.jpg"/>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <%= link_to "View bookings", mybookings_path, class: "dropdown-item" %>
+        <%= link_to "My bookings", mybookings_path, class: "dropdown-item" %>
           <% if current_user.profile.present? %>
             <%= link_to 'Edit profile', edit_profile_path(current_user.profile), class: "dropdown-item" %>
           <% else %>
