@@ -57,13 +57,13 @@ profile_p = Profile.create!(user: user_p, first_name: "Elon", last_name: "Musk",
 puts "create booking 1"
 start_date_1 = Date.new(2021, 2, 5)
 end_date_1 = Date.new(2021, 2, 6)
-booking_a = Booking.create(user: user_c, profile: profile_c, event_name: "Here Comes Treble Concert", event_location: "London 02 Arena", start_date: start_date_1, end_date: end_date_1)
+booking_a = Booking.create(user: user_a, profile: profile_c, event_name: "Here Comes Treble Concert", event_location: "London 02 Arena", start_date: start_date_1, end_date: end_date_1)
 puts "Booking 1 created!"
 
 puts "create booking 2"
 start_date_2 = Date.new(2021, 5, 10)
 end_date_2 = Date.new(2021, 5, 11)
-booking_b = Booking.create(user: user_a, profile: profile_a, event_name: "Meeting at the GQ", event_location: "Can't say it here", start_date: start_date_2, end_date: end_date_2)
+booking_b = Booking.create(user: user_i, profile: profile_a, event_name: "Meeting at the GQ", event_location: "Can't say it here", start_date: start_date_2, end_date: end_date_2)
 puts "Booking 2 created!"
 
 puts "create booking 3"
@@ -75,13 +75,13 @@ puts "Booking 3 created!"
 puts "create booking 4"
 start_date_4 = Date.new(2021, 8, 21)
 end_date_4 = Date.new(2021, 8, 22)
-booking_d = Booking.create(user: user_a, profile: profile_a, event_name: "Meth & Coke mixing", event_location: "Albuquerque", start_date: start_date_4, end_date: end_date_4)
+booking_d = Booking.create(user: user_h, profile: profile_a, event_name: "Meth & Coke mixing", event_location: "Albuquerque", start_date: start_date_4, end_date: end_date_4)
 puts "Booking 4 created!"
 
 puts "create booking 5"
 start_date_5 = Date.new(2021, 8, 23)
 end_date_5 = Date.new(2021, 8, 24)
-booking_e = Booking.create(user: user_a, profile: profile_a, event_name: "Chemistry for begginers", event_location: "New Mexico", start_date: start_date_5, end_date: end_date_5)
+booking_e = Booking.create(user: user_h, profile: profile_a, event_name: "Chemistry for begginers", event_location: "New Mexico", start_date: start_date_5, end_date: end_date_5)
 puts "Booking 5 created!"
 
 puts "Everything created!"

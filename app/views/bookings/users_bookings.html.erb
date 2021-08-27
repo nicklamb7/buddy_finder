@@ -6,15 +6,19 @@
       <div class="card m-3" style="width: 18rem;">
         <img src="<%= booking.profile.picture %>" class="card-img-top" alt="<%= booking.profile.first_name %>" id="card-img">
         <div class="card-body">
-          <h5 class="card-title"><%= booking.profile.first_name %> <%= booking.profile.last_name %></h5>
-          <p class="card-title"><%= booking.event_name %></p>
-          <p class="card-text"><%= booking.event_location %></p>
-          <p class="card-text fw-bolder" style="color: #ff385c;"><%= booking.start_date%> - <%= booking.end_date %></p>
-          <%= link_to "Cancel booking",
-                booking_path(booking.id),
-                method: :delete,
-                data: { confirm: "Are you sure?" }, class: "btn btn-primary white-button" %>
-
+          <h6 class="card-title bookings-card-title">Buddy match</h6>
+          <p class="card-text bookings-card-text"> <%= booking.profile.first_name %> <%= booking.profile.last_name %></p>
+          <h6 class="card-title bookings-card-title">Event</h6>
+          <p class="card-text bookings-card-text"> <%= booking.event_name %></p>
+          <h6 class="card-title bookings-card-title">Location</h6>
+          <p class="card-text bookings-card-text"><%= booking.event_location %></p>
+          <div class="card-footer">
+          <h6 class="card-title bookings-card-title text-center">Meeting date</h6>
+          <p class="card-text fw-bolder" style="color: #ff385c;"><%= booking.start_date.day %>
+           <span style="color: #000000;"> - </span> <%= booking.end_date.day%> <%= Date::MONTHNAMES[booking.end_date.month] %> <%= booking.end_date.year %>
+          </p>
+            </div>
+          <p class="card-text fw-bolder" style="color: #ff385c;">
       </div>
     </div>
     <% end %>
@@ -23,6 +27,6 @@
     <h2>No bookings yet!</h2>
   <% end %>
   <div class="text-center">
-    <%= link_to "Go back to all profiles", profiles_path, class: "btn btn-primary pink-button"%>
+    <%= link_to "Go back to all profiles", profiles_path, class: "btn pink-button"%>
     </div>
   </div>
