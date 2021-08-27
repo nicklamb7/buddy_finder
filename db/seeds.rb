@@ -31,6 +31,7 @@ user_l = User.create!(email: "frank@gmail.com", password: "hidcegsol")
 user_m = User.create!(email: "hulk@gmail.com", password: "hidcegedrf")
 user_n = User.create!(email: "cersei@gmail.com", password: "hidcegske")
 user_o = User.create!(email: "lizzy@gmail.com", password: "hidcegske")
+user_p = User.create!(email: "elonmusk@gmail.com", password: "000000")
 user_nat = User.create!(email: "nat@gmail.com", password: "hidcewfwj")
 
 puts "create profile"
@@ -49,6 +50,7 @@ profile_l = Profile.create!(user: user_l, first_name: "Frank", last_name: "Galla
 profile_m = Profile.create!(user: user_m, first_name: "Hulk", last_name: "Hogan", bio: " Hey brother! Lets get out therer and get wasted tonight! Hulk needs to unleash the beast!!", interests: "Cold beer, ripping people off the top turnbuckle! Bleaching my hair", picture: "https://res.cloudinary.com/dwfl1xhao/image/upload/v1630048718/buddyfinder/latest_nkhng8.jpg", location: "7 Shepherdess Pl, London N1 7LJ", birth_date: Date.new(1953, 11, 8))
 profile_n = Profile.create!(user: user_n, first_name: "Cersei", last_name: "Lannister", bio: "Im kind, honest, caring, compassionate, loyal and sweet. Wouldnt hurt a fly! Would be nice to meet i nice guy who wasn't my brother, for once.", interests: "Total domination, murder, stabbing people in the back, my brother!", picture: "https://res.cloudinary.com/dwfl1xhao/image/upload/v1630049123/buddyfinder/cersei-euron-gift-1500579238.png_xmtnqh.png", location: "37-69 Dame St, London", birth_date: Date.new(1976, 9, 18))
 profile_o = Profile.create!(user: user_o, first_name: "Elizabeth", last_name: "Windsor", bio: "Hello all, Lizzy here. Down to have a jolly good time, walk my doggies, maybe get a lil' tipsyyyyy. Cheerio!", interests: "Tea, crumpets, being polite, waving weirdly!", picture: "https://res.cloudinary.com/dwfl1xhao/image/upload/v1630049309/buddyfinder/queen-elizabeth-ii-2_mv4gvg.jpg", location: "London N1 5EJ", birth_date: Date.new(1938, 9, 18))
+profile_p = Profile.create!(user: user_p, first_name: "Elon", last_name: "Musk", bio: "I'm Elon. You'll find me wither building rockets or smoking weed with Joe Rogan.", interests: "Rockets, weed, self driving cars, socially awkward interactions.", picture: "https://res.cloudinary.com/dwfl1xhao/image/upload/v1630059458/buddyfinder/1229892934.0_dc3evb.webp", location: "23 Bridport Pl, London N1 5DX", birth_date: Date.new(1972, 3, 22))
 profile_nat = Profile.create!(user: user_nat, first_name: "Natasha", last_name: "Goring", bio: "Wonder Woman 1984", interests: "Wonder Woman, Soviet Union, Cold War", picture: "https://image.tmdb.org/t/p/original/8UlWHLMpgZm9bx6QYh0NFoq67TZ.jpg", location: "102 Crondall Ct, London N1 6JJ")
 
 
