@@ -1,5 +1,4 @@
 <% if @error == nil %>
-<%= link_to 'Go back to all profiles', profiles_path, class: "btn btn-primary" %>
 <div class="container py-5">
   <div class="row">
     <div class="col-12 col-md-6 offset-lg-3">
@@ -14,7 +13,7 @@
           <%= f.input :interests, placeholder: '@profile.id.interests' %>
           <%= f.input :picture, label: 'Picture url', placeholder: '@profile.id.picture' %>
           <br>
-          <%= f.submit class: 'btn btn-success' %>
+          <%= f.submit class: "btn pink-button-reg" %>
         <% end %>
       </div>
     </div>
