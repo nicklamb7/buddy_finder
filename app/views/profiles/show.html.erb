@@ -1,5 +1,5 @@
 
-    <div class="container show-page">
+    <div class="show-page">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-8">
 
@@ -31,20 +31,20 @@
           <br>
           <div class="card" style="width: 500;">
             <ul class="list-group list-group-flush">
-              <li class="list-group-item"><h2> Bio </h2></li>
-              <li class="list-group-item"><%= @profile.bio %></li>
-              <li class="list-group-item"><h2> Age </h2></li>
-              <li class="list-group-item">
+              <li class="list-group-item"><h2> Bio: </h2></li>
+              <li class="list-group-item user-input"><%= @profile.bio %></li>
+              <li class="list-group-item"><h2> Age: </h2></li>
+              <li class="list-group-item user-input">
                 <% if @age == nil %>
                   Prefer not to say
                 <% else %>
                   <%= @age %>
                 <% end %>
               </li>
-              <li class="list-group-item"><h2> Interests </h2></li>
-              <li class="list-group-item"><%= @profile.interests %></li>
-              <li class="list-group-item"><h2> Location </h2></li>
-              <li class="list-group-item"><%= @profile.location %></li>
+              <li class="list-group-item"><h2> Interests: </h2></li>
+              <li class="list-group-item user-input"><%= @profile.interests %></li>
+              <li class="list-group-item"><h2> Location: </h2></li>
+              <li class="list-group-item user-input"><%= @profile.location %></li>
             </ul>
           </div>
 
@@ -69,9 +69,8 @@
               <%= f.input :event_location %>
             </div>
 
-
-              <div class="form-actions text-left mt-3">
-              <button class ="btn btn-success mt-1 mb-4 pink-button"> <%= f.button :submit %> </button>
+              <div class="form-actions text-center">
+                <%= f.button :submit%>
               </div>
             <% end %>
 

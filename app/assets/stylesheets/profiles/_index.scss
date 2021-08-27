@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
 body {
   margin-top: 80px;
   .profiles-page {
@@ -55,6 +57,10 @@ body {
   }
 }
 
+.typed-cursor{
+  display:none;
+}
+
 .image-wrapper {
   overflow: hidden;
 }
@@ -89,5 +95,49 @@ body {
   }
   button a {
     color:  #ff385c !important;
+  }
+  .rating {
+    font-size: 18px;
+  }
+}
+
+.mapboxgl-popup-content {
+  padding: 0px !important;
+  border-radius: 12px !important;
+  box-shadow: rgba(0, 0, 0, 0.28) 0px 8px 28px !important;
+  font-family: Inter, sans-serif !important;
+  font-weight: 300 !important;
+}
+
+#info-window {
+  background-color: white;
+  font-size: 14.4px;
+  font-family: Inter, sans-serif;
+  overflow: hidden;
+  padding: 0px;
+  border-radius: 12px !important;
+  font-family: Inter, sans-serif !important;
+  font-weight: 300 !important;
+  img {
+    width: auto;
+    height: 180px;
+    object-fit: cover;
+    background-size: cover;
+  }
+  .info-window-botton-section {
+    padding: 16px;
+    border-bottom-left-radius: 12px !important;
+    border-bottom-right-radius: 12px !important;
+    margin: 0px;
+    border-radius: 12px !important;
+    h2 {
+      font-family: Inter, sans-serif !important;
+      font-weight: 300 !important;
+      font-size: 18px;
+    }
+    svg {
+      margin: 0px 8px;
+      color: #ff385c;
+    }
   }
 }

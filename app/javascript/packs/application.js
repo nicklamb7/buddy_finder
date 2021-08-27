@@ -2,7 +2,7 @@
 // present in this directory. You're encouraged to place your actual application logic in
 // a relevant structure within app/javascript and only use these pack files to reference
 // that code so it'll be compiled.
-import { loadDynamicBannerText } from '../components/banner';
+
 require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
@@ -23,12 +23,14 @@ require("channels");
 // External imports
 
 import { initFlatpickr } from "../plugins/flatpickr";
-
+import { initMapbox } from '../plugins/init_mapbox';
+import { loadDynamicBannerText } from '../components/banner';
 // import "bootstrap";
 const searchBar = document.querySelector("#search-bar");
 
 
 document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
+  initMapbox();
   loadDynamicBannerText();
 });

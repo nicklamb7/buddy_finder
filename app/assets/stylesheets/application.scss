@@ -7,8 +7,8 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
-@import 'flatpickr/dist/flatpickr';
-@import 'flatpickr/plugins/confirmDate/confirmDate';
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/plugins/confirmDate/confirmDate";
 
 // Your CSS partials
 @import "components/index";
@@ -23,3 +23,4 @@
 @import "users/login";
 @import "bookings/user_bookings";
 @import "bookings/index";
+@import "alerts";

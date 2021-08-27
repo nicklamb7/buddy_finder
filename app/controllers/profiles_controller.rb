@@ -7,7 +7,14 @@ class ProfilesController < ApplicationController
     else
       @profiles = Profile.all
       @found = false
+    end
 
+    @markers = @profiles.geocoded.map do |profile|
+      {
+        lat: profile.latitude,
+        lng: profile.longitude,
+        info_window: render_to_string(partial: "info_window", locals: { profile: profile })
+      }
     end
   end
 
@@ -42,7 +49,8 @@ class ProfilesController < ApplicationController
   def edit
     @profile = Profile.find(params[:id])
     unless current_user.profile == @profile
-      return redirect_to current_user.profile.present? ? edit_profile_path(current_user.profile) : new_profile_path, notice: "You are not authorized to edit someone else's profile"
+      return redirect_to current_user.profile.present? ? edit_profile_path(current_user.profile) : new_profile_path,
+                         alert: "You are not authorized to edit someone else's profile"
     end
   end
 
@@ -77,6 +85,6 @@ class ProfilesController < ApplicationController
   private
 
   def profile_params
-    params.require(:profile).permit(:bio, :interests, :picture, :location, :birth_date, :last_name, :first_name)
+    params.require(:profile).permit(:bio, :interests, :picture, :location, :birth_date, :last_name, :first_name, :latitude, :longitude)
   end
 end
