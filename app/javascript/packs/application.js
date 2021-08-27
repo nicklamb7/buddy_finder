@@ -32,3 +32,9 @@ document.addEventListener('turbolinks:load', () => {
   initFlatpickr();
   loadDynamicBannerText();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
