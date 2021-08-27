@@ -17,6 +17,10 @@
           <p class="card-text fw-bolder" style="color: #ff385c;"><%= booking.start_date.day %>
            <span style="color: #000000;"> - </span> <%= booking.end_date.day%> <%= Date::MONTHNAMES[booking.end_date.month] %> <%= booking.end_date.year %>
           </p>
+          <%= link_to "Cancel booking",
+                booking_path(booking.id),
+                method: :delete,
+                data: { confirm: "Are you sure?" }, class: "btn btn-primary white-button" %>
             </div>
           <p class="card-text fw-bolder" style="color: #ff385c;">
       </div>
