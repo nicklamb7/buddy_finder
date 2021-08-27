@@ -28,16 +28,18 @@
   button {
     border-radius: 50px;
     border: 1px solid #ffffff50;
-    background-color: transparent;
+    background-color: #ffffff;
     height: 60px;
     width: 200px;
-    color: #ffffff;
+    color: #ff385c;
     font-size: 20px;
     margin: 32px;
+    opacity: 0.85;
   }
   a {
-    color: #ffffff;
+    color: #ff385c;
     text-decoration: none;
+    font-weight: 400;
   }
   .banner-fade {
     background-image: linear-gradient(transparent, #00000020);
@@ -48,4 +50,8 @@
     align-items: center;
     flex-direction: column;
   }
+}
+
+button:hover {
+  opacity: 1;
 }
