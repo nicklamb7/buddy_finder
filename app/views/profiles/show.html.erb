@@ -70,15 +70,16 @@
             </div>
 
 
-              <div class="form-actions text-center">
-              <button class ="btn btn-success m-3 pink-button"> <%= f.button :submit %> </button>
+              <div class="form-actions text-left mt-3">
+              <button class ="btn btn-success mt-1 mb-4 pink-button"> <%= f.button :submit %> </button>
               </div>
             <% end %>
-            <div class="d-flex justify-content-center">
-              <div class="m-1">
-              <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary white-button" %>
+
+            <div class="justify-content-center m-1">
+            <h4>Checkout <%= @profile.first_name %>'s availabilities</h4>
+              <div class="mt-3">
+              <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn white-button"%>
               </div>
-              <br>
             </div>
         </div>
       </div>
