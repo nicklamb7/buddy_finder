@@ -1,7 +1,5 @@
-<h1> <%= @profile.first_name %>'s profile page</h1>
-<%= link_to 'Go back to all profiles', profiles_path, class: "btn btn-primary" %>
 
-    <div class="container my-3">
+    <div class="container show-page">
       <div class="row">
         <div class="col-12 col-md-6 col-lg-8">
 
@@ -65,36 +63,25 @@
             <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
             <div class="form-inputs">
-              <%= f.input :start_date %>
-              <%= f.input :end_date %>
+              <%= f.input :start_date, as: :string, input_html: {class: "datepicker"} %>
+              <%= f.input :end_date, as: :string, input_html: {class: "datepicker"} %>
               <%= f.input :event_name %>
               <%= f.input :event_location %>
             </div>
 
-            <div class="form-actions text-center">
-            <button class ="btn btn-success m-3"> <%= f.button :submit %> </button>
+
+              <div class="form-actions text-center">
+              <button class ="btn btn-success m-3 pink-button"> <%= f.button :submit %> </button>
+              </div>
+            <% end %>
+            <div class="d-flex justify-content-center">
+              <div class="m-1">
+              <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary white-button" %>
+              </div>
+              <br>
             </div>
-          <% end %>
-          <div class="d-flex justify-content-center">
-          <div class="m-1">
-          <%= link_to 'All bookings', profile_bookings_path(@profile), class: "btn btn-primary" %>
-          </div>
-          <br>
-          <div class="m-1">
-          <%= link_to 'Edit profile', edit_profile_path(@profile), class: "btn btn-primary" %>
-          </div>
-          </div>
         </div>
-
       </div>
-
-
-
     </div>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
-
   </body>
 </html>

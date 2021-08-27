@@ -1,7 +1,6 @@
 <div class="container text-center p-3">
-  <h1>My bookings</h1>
-  <%# if else statement not working :( %>
-  <% if @bookings %>
+  <h1> <%= @profile.first_name %>'s bookings</h1>
+  <% if @bookings.length > 0 %>
   <div class ="container d-flex justify-content-center m-3">
     <% @bookings.each do |booking| %>
     <div class="card m-3" style="width: 18rem;">
@@ -13,10 +12,10 @@
     </div>
     <% end %>
   </div>
-    <% elsif @bookings == [] %>
-    <h2>You don't have any bookings yet!</h2>
+    <% else %>
+    <h2>No bookings yet!</h2>
   <% end %>
   <div class="text-center">
-    <%= link_to "Go back to my profile", profile_path(@profile), class: "btn btn-primary"%>
+    <%= link_to "Go back to profile", profile_path(@profile), class: "btn btn-primary"%>
     </div>
   </div>

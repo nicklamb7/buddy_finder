@@ -3,14 +3,14 @@
     <%= link_to "Buddy Finder", root_path, id: "logo" %>
   </div>
   <div class="middle-section d-flex">
-    <div class="m-2">
-    <%= form_tag profiles_path, method: :get do %>
+    <div class="search-bar">
+      <%= form_tag profiles_path, method: :get do %>
       <%= text_field_tag :query, '',
       class: "form-control",
-      placeholder: "Find a buddy"
+      placeholder: "Find a buddy..."
       %>
       </div>
-      <div class="m-2">
+      <div class="search-btn">
       <%= submit_tag "Search", class: "btn btn-primary search" %>
       </div>
     <% end %>
@@ -18,14 +18,23 @@
   <div class="right-section">
     <div class="nav-btns"><%= link_to "Home", root_path %></div>
     <div class="nav-btns d-none d-sm-block"><%= link_to "Explore", profiles_path %></div>
-    <% if !user_signed_in? %>
-    <div class="nav-btns d-none d-sm-block"><%= link_to "Sign up", new_user_registration_path %></div>
-    <% end %>
-    <% if !user_signed_in? %>
-      <div class="nav-btns"><%= link_to "Log in", new_user_session_path %></div>
-    <% end %>
     <% if user_signed_in? %>
-      <img class="avatar-large" alt="avatar-large" src="https://res.cloudinary.com/dxhrxhiwb/image/upload/v1629889921/dwayne_pcvf1e.jpg" />
+      <div class="dropdown">
+        <img class="avatar-large avatar-clickable" alt="avatar-large" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://res.cloudinary.com/dxhrxhiwb/image/upload/v1629889921/dwayne_pcvf1e.jpg"/>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <%= link_to "View bookings", mybookings_path, class: "dropdown-item" %>
+          <% if current_user.profile.present? %>
+            <%= link_to 'Edit profile', edit_profile_path(current_user.profile), class: "dropdown-item" %>
+          <% else %>
+            <%= link_to 'Create profile', new_profile_path, class: 'dropdown-item' %>
+          <% end %>
+          <div class="dropdown-divider"></div>
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+        </div>
+      </div>
+    <% else %>
+      <div class="nav-btns d-none d-sm-block"><%= link_to "Sign up", new_user_registration_path %></div>
+      <div class="nav-btns"><%= link_to "Log in", new_user_session_path %></div>
     <% end %>
   </div>
 </nav>

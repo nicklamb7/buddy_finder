@@ -1,0 +1,23 @@
+<div class="container text-center p-3">
+  <h1> My bookings</h1>
+  <% if @bookings.length > 0 %>
+  <div class ="container d-flex justify-content-center m-3">
+      <% @bookings.each do |booking| %>
+      <div class="card m-3" style="width: 18rem;">
+        <img src="<%= booking.profile.picture %>" class="card-img-top" alt="<%= booking.profile.first_name %>" id="card-img">
+        <div class="card-body">
+          <h5 class="card-title"><%= booking.profile.first_name %> <%= booking.profile.last_name %></h5>
+          <p class="card-title"><%= booking.event_name %></p>
+          <p class="card-text"><%= booking.event_location %></p>
+          <p class="card-text fw-bolder" style="color: #ff385c;"><%= booking.start_date%> - <%= booking.end_date %></p>
+      </div>
+    </div>
+    <% end %>
+  </div>
+    <% else %>
+    <h2>No bookings yet!</h2>
+  <% end %>
+  <div class="text-center">
+    <%= link_to "Go back to all profiles", profiles_path, class: "btn btn-primary pink-button"%>
+    </div>
+  </div>
