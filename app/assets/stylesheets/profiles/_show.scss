@@ -1,5 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+
+.show-page {
+  background-color: #ffffff;
+  padding: 16px 160px;
+  font-family: Inter, sans-serif;
+  font-weight: 300;
+  h1 {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 32px;
+    padding: 16px 0px;
+  }
+  .list-group-item {
+    border: none;
+  }
+  .card {
+    border: none !important;
+  }
+  .card ul {
+    border-radius: 12px !important;
+    box-shadow: 0px 2px 8px #00000025;
+    padding: 16px;
+    .user-input {
+      border-bottom: 1px solid #e1e1e1;
+      padding-bottom: 16px;
+    }
+    h2 {
+      font-family: Inter, sans-serif;
+      font-weight: 300;
+      font-size: 14.4px;
+      color: #00000080;
+      padding-top: 12px;
+    }
+
+  }
+}
+
+.show-page img {
+  border-radius: 12px;
+  background-color: #ffffff;
+}
+
 .booking-request {
   position: sticky;
-  top: 80px;
+  top: 120px;
   padding: 16px;
+  border-radius: 12px;
+  box-shadow: 0px 2px 8px #00000025;
+  margin: 16px;
+  h2 {
+    font-family: Inter, sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    padding: 16px;
+  }
+  label {
+    font-size: 14px;
+    color: #00000080;
+  }
+  input {
+    padding: .5em .75em;
+    background-color: #f7f7f8;
+    font-weight: 300;
+    border-radius: .25rem;
+    color: rgba(25,25,25,.8);
+    border: 0;
+    box-shadow: 0 0 0 1px #e1e1e1, 0 2px 4px 0 #00000016, 0 1px 1.5px 0 #00000012;
+    overflow: visible;
+    border-radius: .4em;
+    line-height: 1.5;
+    animation: native-autofill-out 1ms;
+    -webkit-animation: native-autofill-out 1ms;
+    width: 100%;
+    margin: 8px 0px;
+  }
+  .btn {
+    background-color: #ff385c;
+    color: #ffffff;
+    height: 48px;
+    margin: 16px 0px;
+  }
+  .white-button {
+    background-color: #ffffff !important;
+    color: #ff385c !important;
+    height: 40px;
+    font-size: 14.4px;
+  }
 }
